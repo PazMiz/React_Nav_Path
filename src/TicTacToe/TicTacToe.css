@@ -1,0 +1,54 @@
+/* Tic Tac Toe board */
+.tic-tac-toe .board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 306px;
+  }
+  
+  /* Tic Tac Toe square */
+  .tic-tac-toe .square-container {
+    width: 100px;
+    height: 100px;
+    margin-right: -2px;
+    margin-bottom: -2px;
+  }
+  
+  .tic-tac-toe .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  /* Tic Tac Toe square content */
+  .tic-tac-toe .square span {
+    font-size: 48px;
+  }
+  
+  /* Tic Tac Toe status */
+  .tic-tac-toe .status {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Tic Tac Toe reset button */
+  .tic-tac-toe .reset {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tic-tac-toe .reset:hover {
+    background-color: #0056b3;
+  }
+  

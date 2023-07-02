@@ -1,0 +1,46 @@
+.todo-list {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .todo-list h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .todo-list input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .todo-list button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  
+  .todo-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todo-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .todo-list li button {
+    background-color: #1da7c9;
+  }
+  
+  .todo-list li button,
+  .todo-list li span {
+    margin-left: 8px;
+  }
+  

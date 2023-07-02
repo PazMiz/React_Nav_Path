@@ -1,0 +1,30 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .carousel img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .carousel button:first-child {
+    left: 100px;
+  }
+  
+  .carousel button:last-child {
+    right: 10px;
+  }
+  
