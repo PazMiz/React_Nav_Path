@@ -11,6 +11,7 @@ import Carousel from './Carousel/Carousel'; // Import the Carousel component
 // import ProductList from './Products/ProductList';
 // import CheckoutForm from './CheckoutForm/CheckoutForm';
 import About from './About';
+import ProductList from './Products/ProductList';
 
 const images = [
   'https://fastly.picsum.photos/id/908/200/200.jpg?hmac=CovMVsq4EkU03tnOxNLyxYsLlemPPHBizxcnmaHaRcU',
@@ -29,6 +30,7 @@ const App = () => {
   ]);
   const [newName, setNewName] = useState('');
   const [showAbout, setShowAbout] = useState(false);
+  const [showProduct, setShowProduct] = useState(false); // Add showProduct state
 
   const handleInputChange = (event) => {
     setNewName(event.target.value);
@@ -85,13 +87,13 @@ const App = () => {
   };
 
   const handleProductCrudClick = () => {
-    window.location.href = "/ProductCrud";
+    setShowProduct(true); // Set showProduct to true
   };
 
   const handleAboutClick = () => {
     setShowAbout(true);
   };
-  
+
   return (
     <div style={styles.container}>
       <nav>
@@ -122,8 +124,6 @@ const App = () => {
           <li>
             <Link to="/CheckoutForm">CheckoutForm</Link>
           </li>
-          
-
           <li>
             <button onClick={handleProductCrudClick}>ProductCrud</button>
           </li>
@@ -138,15 +138,6 @@ const App = () => {
       <Accordion title="Paz App" content="Paz React First App" />
       <br />
       <Accordion title="Greetings" content="Hi" />
-      {/* <RegistrationForm /> */}
-      {/* <LoginForm /> */}
-      <br />
-      <br />
-      <br />
-      {/* <TaskList /> */}
-      {/* <TicTacToe /> */}
-      {/* <ProductList /> */}
-      {/* <CheckoutForm /> */}
       <br />
       <br />
       <ul>
@@ -173,6 +164,7 @@ const App = () => {
       <h3 style={{ color: 'blue' }}>PazM Carousel App</h3>
       <Carousel images={images} interval={2000} />
       {showAbout && <About onClose={() => setShowAbout(false)} />}
+      {showProduct && <ProductList onClose={() => setShowProduct(false)} />}
     </div>
   );
 };
