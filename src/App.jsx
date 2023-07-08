@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Accordion from './todolist/Accordion';
 // import LoginForm from './LoginForm/LoginForm';
 // import TaskList from './Task/TaskList';
@@ -8,10 +8,15 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import TicTacToe from './TicTacToe/TicTacToe'; // Import the TicTacToe component
 import Carousel from './Carousel/Carousel'; // Import the Carousel component
+import Navbar from './Navbar';
 // import ProductList from './Products/ProductList';
 // import CheckoutForm from './CheckoutForm/CheckoutForm';
-import About from './About';
-import ProductList from './Products/ProductList';
+// import About from './About';
+// import ProductList from './Products/ProductList';
+// import Navbar from './Navbar'; // Import the Navbar component
+
+// Your existing App component code...
+
 
 const images = [
   'https://fastly.picsum.photos/id/908/200/200.jpg?hmac=CovMVsq4EkU03tnOxNLyxYsLlemPPHBizxcnmaHaRcU',
@@ -29,8 +34,6 @@ const App = () => {
     { name: 'Paz', isActive: true },
   ]);
   const [newName, setNewName] = useState('');
-  const [showAbout, setShowAbout] = useState(false);
-  const [showProduct, setShowProduct] = useState(false); // Add showProduct state
 
   const handleInputChange = (event) => {
     setNewName(event.target.value);
@@ -86,53 +89,13 @@ const App = () => {
     );
   };
 
-  const handleProductCrudClick = () => {
-    setShowProduct(true); // Set showProduct to true
-  };
 
-  const handleAboutClick = () => {
-    setShowAbout(true);
-  };
 
   return (
     <div style={styles.container}>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">
-              <img
-                src="https://www.paz.co.il/assets/img/PAZ_LOGO_WEB.png" width={200}
-                alt="Home"
-              />
-            </Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-          <li>
-            <Link to="/TicTacToe">TicTacToe</Link>
-          </li>
-          <li>
-            <Link to="/LoginForm">LoginForm</Link>
-          </li>
-          <li>
-            <Link to="/RegistrationForm">RegistrationForm</Link>
-          </li>
-          <li>
-            <Link to="/TaskList">TaskList</Link>
-          </li>
-          <li>
-            <Link to="/CheckoutForm">CheckoutForm</Link>
-          </li>
-          <li>
-            <button onClick={handleProductCrudClick}>ProductCrud</button>
-          </li>
-          <li>
-            <button onClick={handleAboutClick}>About</button>
-          </li>
-        </ul>
-      </nav>
-      <h1 style={{ color: 'blue' }}>PazM React App</h1>
+      <Navbar></Navbar>
+    
+      {/* <h1 style={{ color: 'blue' }}>PazM React App</h1> */}
       <Counter />
       <br />
       <Accordion title="Paz App" content="Paz React First App" />
@@ -163,8 +126,6 @@ const App = () => {
       <br />
       <h3 style={{ color: 'blue' }}>PazM Carousel App</h3>
       <Carousel images={images} interval={2000} />
-      {showAbout && <About onClose={() => setShowAbout(false)} />}
-      {showProduct && <ProductList onClose={() => setShowProduct(false)} />}
     </div>
   );
 };
